@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <style>
+    /* General Styles */
+    body { 
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+      margin: 0; 
+      padding: 0; 
+      background-color: #e9ecef; 
+      color: #333; 
+    }
+
+    .container { 
+      max-width: 1000px; 
+      margin: 40px auto; 
+      background: #ffffff; 
+      padding: 25px; 
+      border-radius: 12px; 
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1); 
+    }
+
+    /* Header Styles */
+    .header { 
+      text-align: center; 
+      padding-bottom: 20px;
+      border-bottom: 4px solid #007bff; /* Adds a blue border below the header */
+    }
+
+    .header h1 { 
+      font-size: 36px; 
+      color: #007bff; 
+    }
+
+    .header p {
+      font-size: 22px;
+      color: #666;
+    }
+
+    /* Navigation Bar Styles */
+    .nav-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-bottom: 25px;
+    }
+
+    .nav-bar a {
+      flex: 1 1 150px;
+      text-align: center;
+      padding: 12px 20px;
+      font-size: 16px;
+      color: #ffffff;
+      background-color: #007bff;
+      text-decoration: none;
+      border-radius: 8px;
+      margin: 5px;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .nav-bar a:hover {
+      background-color: #0056b3;
+      transform: scale(1.02);
+    }
+
+    /* Section Styles */
+    .section {
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      margin-bottom: 25px;
+      background-color: #f8f9fa;
+    }
+
+    .section h2 {
+      font-size: 30px; 
+      margin-bottom: 15px; 
+      color: #007bff; 
+    }
+
+    /* Form Styles */
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 16px;
+      margin-bottom: 6px;
+      color: #333;
+    }
+
+    .form-group input, .form-group select {
+      width: 100%;
+      padding: 10px;
+      font-size: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      box-sizing: border-box;
+    }
+
+    .form-group input[type="submit"] {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .form-group input[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+
+    /* Logout Button Styles */
+    .logout-button {
+      display: block;
+      margin: 20px auto;
+      padding: 12px 24px;
+      font-size: 16px;
+      color: #fff;
+      background-color: #dc3545;
+      border: none;
+      border-radius: 6px;
+      text-align: center;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    .logout-button:hover { 
+      background-color: #c82333; 
+      transform: scale(1.02);
+    }
+
+    /* Table Styles */
+    .table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+
+    .table th,
+    .table td {
+      padding: 10px;
+      text-align: left;
+      border-bottom: 1px solid #dee2e6;
+    }
+
+    .table th {
+      background-color: #007bff;
+      color: #ffffff;
+    }
+
+    .table a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    .table a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Admin Dashboard</h1>
+      <p>Welcome, <strong id="username">Username</strong></p>
+    </div>
+
+    <!-- Navigation Bar -->
+    <div class="nav-bar">
+      <a href="#check-requests">Check Requests</a>
+      <a href="#add-resource">Add Resource</a>
+      <a href="#remove-resource">Remove Resource</a>
+      <a href="#add-user">Add User</a>
+      <a href="#remove-user">Remove User</a>
+      <a href="#remove-resource-user">Remove Resource from User</a>
+      <a href="#check-users">Check Users for Resource</a>
+    </div>
+
+    <!-- Check Requests Section -->
+    <div id="check-requests" class="section">
+      <h2>Check Requests</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Request For</th>
+            <th>Request From</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Resource A</td>
+            <td>User 1</td>
+            <td>
+              <a href="#">Approve</a> | 
+              <a href="#">Reject</a>
+            </td>
+          </tr>
+          <tr>
+            <td>Resource B</td>
+            <td>User 2</td>
+            <td>
+              <a href="#">Approve</a> | 
+              <a href="#">Reject</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Add Resource Section -->
+    <div id="add-resource" class="section">
+      <h2>Add Resource</h2>
+      <form id="add-resource-form">
+        <div class="form-group">
+          <label for="resource-name">Resource Name</label>
+          <input type="text" id="resource-name" name="resource_name" required>
+        </div>
+        <div class="form-group">
+          <input type="submit" value="Add Resource">
+        </div>
+        <div id="messageContainer" class="message"></div>
+        <div id="add-message" class="message"></div>
+      </form>
+    </div>
+    
+    <!-- Remove Resource Section -->
+    <div id="remove-resource" class="section">
+      <h2>Remove Resource</h2>
+      <form id="remove-resource-form">
+        <div class="form-group">
+          <label for="remove-resource-dropdown">Resource to Remove</label>
+          <select id="remove-resource-dropdown" name="resource_name" required>
+            <option value="">Select Resource</option>
+            <!-- Options will be populated dynamically -->
+          </select>
+        </div>
+        <div class="form-group">
+          <input type="submit" value="Remove Resource">
+        </div>
+        <div id="remove-message" class="message"></div>
+      </form>
+    </div>
+
+    <!-- Remove Resource from User Section -->
+    <div id="remove-resource-user" class="section">
+      <h2>Remove Resource from User</h2>
+      <form>
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" placeholder="Enter Username" required>
+        </div>
+        <div class="form-group">
+          <label for="resource-user">Resource to Remove from User</label>
+          <select id="resource-user" name="resource_id" required>
+            <option value="">Select Resource</option>
+            <!-- Example options, replace with server-side generated content -->
+            <option value="1">Resource A</option>
+            <option value="2">Resource B</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <input type="submit" value="Remove Resource from User">
+        </div>
+      </form>
+    </div>
+
+    <!-- Check Users for Resource Section -->
+    <div id="check-users" class="section">
+      <h2>Check Users for Resource</h2>
+      <form>
+        <div class="form-group">
+          <label for="resource-check">Resource</label>
+          <select id="resource-check" name="resource_id" required>
+            <option value="">Select Resource</option>
+            <!-- Example options, replace with server-side generated content -->
+            <option value="1">Resource A</option>
+            <option value="2">Resource B</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <input type="submit" value="Check Users">
+        </div>
+      </form>
+    </div>
+
+    <!-- Logout Button -->
+    <button class="logout-button">Logout</button>
+  </div>
+</body>
+</html>

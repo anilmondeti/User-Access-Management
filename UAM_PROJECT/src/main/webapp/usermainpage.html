@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Resources</title>
+    <link rel="stylesheet" href="userFile.css">
+<script>
+    function getQueryParam(name) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(name);
+    }
+
+    window.onload = function() {
+      // Set username from query parameter
+      document.getElementById('username').textContent = getQueryParam('username') || 'Username';
+    };
+  </script>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>User Dashboard</h1>
+      <p>Welcome, <strong id="username">Username</strong></p>
+    </div>
+
+        <!-- Navigation Bar -->
+       <div class="nav-bar">
+            <a href="webapi/myresource/resourcesofmine">My Resources</a>
+            <a href="webapi/myresource/resourcesarerequested">Request for new resource</a>
+            <a href="webapi/myresource/checkingapprovals">Check approvals</a>
+            <a href="webapi/myresource/requestingfor">Request for Manager/Admin</a>
+            <a href="webapi/myresource/removingownresource">Remove own resource</a>
+            <a href="http://localhost:9002/UAM_PROJECT/updatepassword.html">Update Password</a>
+            <a href="http://localhost:9002/UAM_PROJECT/index.jsp" class="logout">Logout</a>
+        </div>
+        
+        </div>
+        </body>
+        </html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Make User as Admin/Manager</title>
+  <link rel="stylesheet" href="admin.css">
+  <script>
+    function getQueryParam(name) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(name);
+    }
+
+    window.onload = function() {
+      // Set username from query parameter
+      document.getElementById('username').textContent = getQueryParam('username') || 'Username';
+    };
+  </script>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Admin Dashboard</h1>
+      <p>Welcome, <strong id="username">Username</strong></p>
+    </div>
+
+    <div class="navbar">
+      <a href="webapi/myresource/requestsList">Requests</a>
+      <a href="http://localhost:9002/UAM_PROJECT/Adminadduser.html">Add Users</a>
+      <a href="webapi/myresource/userremove">Remove Users</a>
+      <a href="adminaddresources.html">Add Resources</a>
+      <a href="webapi/myresource/resourcesremoved">Remove Resources</a>
+      <a href="webapi/myresource/removeresourcefromauser">Remove resource from a user</a>
+      <a href="webapi/myresource/checkingresourcesonuser">Check users for a resource</a>
+      <a href="webapi/myresource/checkresourcesofuser">Check Resources of a user</a>
+      <a href="webapi/myresource/assignresourcestoansuser">Assign Resources to a user</a>
+      <a href="webapi/myresource/makeasadminormanager">Make user as Admin/Manager</a>
+      <a href="http://localhost:9002/UAM_PROJECT/updatepassword.html">Update Password</a>
+      <a href="http://localhost:9002/UAM_PROJECT/index.jsp" class="logout">Logout</a>
+    </div>
+    </div>
+    </body>
+    </html>

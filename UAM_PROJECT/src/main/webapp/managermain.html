@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Request for Admin</title>
+  <link rel="stylesheet" href="styles.css">
+<script>
+    function getQueryParam(name) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(name);
+    }
+
+    window.onload = function() {
+      // Set username from query parameter
+      document.getElementById('username').textContent = getQueryParam('username') || 'Username';
+    };
+  </script>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1 style=text-align:center>Manager Dashboard</h1>
+      <p style=text-align:center>Welcome, <strong id="username" style=text-align:center>Username</strong></p>
+    </div>
+    <!-- Navbar -->
+    <div class="navbar">
+      <a href="webapi/myresource/managerteam">Show Team</a>
+      <a href="webapi/myresource/togetateammember">Get a Team Member</a>
+      <a href="webapi/myresource/positionreqasadmin">Request for Admin</a>
+      <a href="webapi/myresource/theresourccemanager">My Resources</a>
+      <a href="webapi/myresource/requestaboutresourcesmanager">Request for Resource</a>
+      <a href="webapi/myresource/approvalchecking">Check Approvals</a>
+      <a href="webapi/myresource/removingresourcesformanager">Remove Own Resources</a>
+      <a href="http://localhost:9002/UAM_PROJECT/updatepassword.html">Update Password</a>
+      <a href="http://localhost:9002/UAM_PROJECT/index.jsp" class="logout">Logout</a>
+    </div>
+
+    <!-- Page Content -->
+    
+  </div>
+</body>
+</html>
